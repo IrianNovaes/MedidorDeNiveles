@@ -18,8 +18,8 @@ String id = "AAAAAAAA";
 String auth;
 char authArray[] = "";
 
-char ssid[] = "DAVIDSPINOZZIWIFI-2.4G"; // Wi-Fi
-char pass[] = "h3in3k3n"; // Contraseña
+char ssid[] = "NOMBRE_DE_WIFI"; // Wi-Fi
+char pass[] = "CONTRASEÑA"; // Contraseña
 
 
 // ############# FUNCIONES ############### //
@@ -89,7 +89,7 @@ void initConnection() {
     HTTPClient http;
     int httpCode = 0;
     // intentar conexion
-    if (http.begin("http://192.168.1.37:3333/modules")) {
+    if (http.begin("http://SU_NUMERO_DE_IP:3333/modules")) {
       Serial.println("");
       Serial.println("[HTTP] Trying to send GET request...");
       http.addHeader("Content-Type", "text/plain");  //defino el header
@@ -246,7 +246,7 @@ void sendDistance() {
     int httpCode = 0;
 
     // intentar conexion
-    if (http.begin(client, "http://192.168.1.37:3333/details")) {
+    if (http.begin(client, "http://SU_NUMERO_DE_IP:3333/details")) {
       Serial.println("");
       Serial.println("[HTTP] Trying to send POST request...");
       http.addHeader("Content-Type", "application/json"); //defino el header
